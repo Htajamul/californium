@@ -70,4 +70,55 @@ router.post("/test-post-4", function(req, res) {
     res.send(  { msg: arr , status: true }  )
 })
 
+// Problem Statement 1 :
+// NOTE: you must create the players array outside( on the top ) of the api( so that data is maintained across api hits )
+// Your player collection should be an ARRAY of player objects. Each player object should have the following attributes:
+// Write a POST /players api that creates a new player ( i.e. that saves a player’s details and doesn’t allow saving
+// the data of a player with a name that already exists in the data)
+
+let players = [
+    {
+        "name": "manish",
+        "dob": "1/1/1995",
+        "gender": "male",
+        "city": "jalandhar",
+        "sports": [
+        "swimming"
+        ]
+        },
+        {
+            "name": "gopal",
+            "dob": "1/09/1995",
+            "gender": "male",
+            "city": "delhi",
+            "sports": [
+                "soccer"
+            ],
+        },
+        {
+            "name": "lokesh",
+            "dob": "1/1/1990",
+            "gender": "male",
+            "city": "mumbai",
+            "sports": [
+                "soccer"
+            ],
+        },
+ 
+]
+router.post('/players',function(req,res){
+     let ele=req.body
+      for(i=0;i<players.length-1;i++){
+        if (players[i].name==ele.name){
+           res.send("player already exist")
+           console.log("player already exist")
+           return
+        }
+       
+      }
+        players.push(ele)
+        console.log(players)
+    res.send({data:players})
+})
+
 module.exports = router;
