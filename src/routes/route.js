@@ -10,7 +10,10 @@ router.get("/test-me", function (req, res) {
 
 router.post("/createauthor",authorcontroller.createAuther)
 router.post("/getotherdetail",authorcontroller.createBook)
-
+router.get("/getbook",authorcontroller.getbook)
+router.get("/getauthor",authorcontroller.getauthor)
+router.get("/getbookname",authorcontroller.getbookname)
+router.get("/getprice",authorcontroller.getprice)
 
 
 
