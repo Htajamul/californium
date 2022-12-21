@@ -29,3 +29,41 @@ module.exports = mongoose.model('User', userSchema) //users
 
 // String, Number
 // Boolean, Object/json, array
+
+
+
+
+const createauthor=async function(req,res){
+    let data=req.body
+    let savedata=await authormodel.create(data)
+    // let isautherexist=await authormodel.findOne({author_id:body.author_id})
+    // if(isautherexist){
+    //     authormodel.create(data)
+    //     res.send({msg:isautherexist})
+    // }else{
+    //     res.send({msg:"not exist"})
+    // }
+    res.send({msg:savedata})
+}
+// const getauthordata=async function(req,res){
+//    // let allauthors=await authormodel.find()
+//    // res.send({msg:allauthors})
+//    let data=req.body
+//    let isautherexist=await authormodel.findOne({author_id:author_id})
+//     if(isautherexist){
+//         authormodel.create(data)
+//         res.send({msg:isautherexist})
+//     }else{
+//         res.send({msg:"not exist"})
+//     }
+// }
+// // book=================================================
+// const createbook=async function(req,res){
+//     let data=req.body
+//     let savedata=await bookmodel.create(data)
+//     res.send({msg:savedata})
+// }
+// const getbookdata=async function(req,res){
+//     let allbooks=await bookmodel.find()
+//     res.send({msg:allbooks})
+// }
