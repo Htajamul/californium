@@ -20,7 +20,18 @@ const mid4= function ( req, res, next) {
     next()
 }
 
+const mmw=function(req,res,next){
+    console.log("this is mine first middleware")
+    next()
+}
+const middlew=function(req,res,next){
+    console.log("my second middle ware")
+    next()
+}
+
 module.exports.mid1= mid1
 module.exports.mid2= mid2
 module.exports.mid3= mid3
 module.exports.mid4= mid4
+module.exports.mmw= mmw
+module.exports.middlew=middlew

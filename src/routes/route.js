@@ -12,7 +12,7 @@ router.get("/test-me", function (req, res) {
 
 
 
-router.post("/createBook", BookController.createBook  )
+router.post("/createBook", BookController.createBook)
 
 
 
@@ -35,8 +35,8 @@ router.post("/createBook", BookController.createBook  )
 //     }
 // }
 
-// // e.g. restricted and open-to-all API's can be handled like below now:
-// router.get('/homePage', mid1, UserController.feeds)
+// e.g. restricted and open-to-all API's can be handled like below now:
+//  router.get('/homePage', mid1, UserController.feeds)
 // router.get('/profileDetails', mid1, UserController.profileDetails)
 // router.get('/friendList', mid1, UserController.friendList)
 // router.get('/changePassword', mid1, UserController.changePassword)
@@ -48,11 +48,11 @@ router.post("/createBook", BookController.createBook  )
 
 
 
-router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.mid4, UserController.basicCode)
+//router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.mid4, UserController.basicCode)
 
-
-
-// router.get("/basicRoute2", commonMW.mid1, UserController.basicCode2)
+router.get("/middleware",commonMW.middlew,UserController.getapi)
+//router .get("/mmw",commonMW.mmw,UserController.mymw)
+ router.get("/basicRoute2", commonMW.mid1, UserController.basicCode2)
 // router.get("/basicRoute3", commonMW.mid2, UserController.basicCode3)
 // router.get("/basicRoute4", commonMW.mid1, commonMW.mid4, UserController.basicCode4)
 
